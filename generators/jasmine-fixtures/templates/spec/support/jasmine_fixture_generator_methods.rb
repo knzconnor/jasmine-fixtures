@@ -1,14 +1,13 @@
 # Add fixture-generation methods to ControllerExampleGroup. We load
 # this file within our spec_helper.rb
 
-Spec::Rails::Example::ControllerExampleGroup.class_eval do
-
+RSpec::Rails::ControllerExampleGroup.class_eval do
   # Saves the markup to a fixture file using the given name
   def save_fixture(markup, name)
-    fixture_path = File.join(RAILS_ROOT, '/tmp/js_dom_fixtures')
-    Dir.mkdir(fixture_path) unless File.exists?(fixture_path)
+    fixture_path = Rails.root.join('tmp', 'jasmine_fixtures')
+    FileUtils.mkdir_p(fixture_path)
 
-    fixture_file = File.join(fixture_path, "#{name}.fixture.html.erb")
+    fixture_file = File.join(fixture_path, "#{name}.jasmine_fixture")
     File.open(fixture_file, 'w') do |file|
       file.puts(markup)
     end
@@ -18,18 +17,8 @@ Spec::Rails::Example::ControllerExampleGroup.class_eval do
   # by the css selector.
   def html_for(selector)
     doc = Nokogiri::HTML(response.body)
-
-    remove_third_party_scripts(doc)
-    content = doc.css(selector).first.to_s
-
+    content = doc.at_css(selector).to_s
     convert_body_tag_to_div(content)
-  end
-
-  # Recommended that you add all body-level third party scripts inside a div called #third-party-scripts
-  # so that they can be removed during testing.
-  def remove_third_party_scripts(doc)
-    scripts = doc.at('#third-party-scripts')
-    scripts.remove if scripts
   end
 
   # Many of our css and jQuery selectors rely on a class attribute we

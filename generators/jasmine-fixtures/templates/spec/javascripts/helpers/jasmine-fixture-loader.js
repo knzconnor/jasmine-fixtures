@@ -43,7 +43,7 @@ spec.fixtureHtml = function(fixtureName) {
 spec.retrieveFixture = function(fixtureName) {
 
   // construct a path to the fixture, including a cache-busting timestamp
-  var path = '/tmp/js_dom_fixtures/' + fixtureName + ".fixture.html.erb?" + new Date().getTime();
+  var path = '/tmp/jasmine_fixtures/' + fixtureName + "?" + new Date().getTime();
   var xhr;
 
   // retrieve the fixture markup via xhr request to jasmine server
