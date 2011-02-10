@@ -1,3 +1,14 @@
+== FORK INFO
+
+This is a work in progress fork for Rails 3.
+
+Get started by running
+
+    rails generate jasmine_fixtures
+
+
+Rails 2.3 README follows.
+
 = jasmine-fixtures
 
 Jasmine Fixtures is an add-on for the behavior-driven development framework, Jasmine. If you're using Jasmine to test the JavaScript in your Ruby projects and you want to test your DOM and bindings, you can use Jasmine Fixtures.
