@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Roger Neel", "Jonathan Barnes", "JB Steadman", "Andrew Cantino"]
-  s.date = %q{2011-01-27}
+  s.date = %q{2011-02-10}
   s.description = %q{Dump out DOM that you want to test. Use jasmine-fixtures to load that DOM into your Jasmine specs. See http://github.com/mavenlink/jasmine-fixtures for more.}
   s.email = %q{roger@mavenlink.com}
   s.extra_rdoc_files = [
@@ -29,13 +29,12 @@ Gem::Specification.new do |s|
      "VERSION",
      "generators/jasmine-fixtures/jasmine_fixtures_generator.rb",
      "generators/jasmine-fixtures/templates/INSTALL",
-     "generators/jasmine-fixtures/templates/spec/controllers/jasmine_fixture_creators.rb",
-     "generators/jasmine-fixtures/templates/spec/javascripts/example-users-spec.js",
      "generators/jasmine-fixtures/templates/spec/javascripts/helpers/jasmine-fixture-helper.js",
      "generators/jasmine-fixtures/templates/spec/javascripts/helpers/jasmine-fixture-loader.js",
      "generators/jasmine-fixtures/templates/spec/javascripts/helpers/jquery-matchers.js",
      "generators/jasmine-fixtures/templates/spec/support/jasmine_fixture_generator_methods.rb",
-     "jasmine-fixtures.gemspec"
+     "jasmine-fixtures.gemspec",
+     "lib/generators/jasmine_fixtures/jasmine_fixtures_generator.rb"
   ]
   s.homepage = %q{http://github.com/mavenlink/jasmine-fixtures}
   s.rdoc_options = ["--charset=UTF-8"]
